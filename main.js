@@ -2,18 +2,9 @@ var readfile = require('./helper.js')
 var fileName = 'sometext.txt'
 var fileName1 = 'test.txt'
 
-
-var readFile = readfile(fileName).then((message) => {
-    console.log(message);
+readfile(fileName).then((message) => {
+readfile(fileName1).then((message1) => {
+console.log(message);
+console.log(message1);
 });
-var readFile = readfile(fileName1).then((message1) => {
-    console.log(message1);
-});
-
-async.waterfall([
-    readFile
-], function(err){
-    if(err){
-        console.log(err);
-    }
 });
